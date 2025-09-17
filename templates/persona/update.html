@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+Editar Empleado
+{% endblock titulo %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Modificar Datos Empleados</h1>
+        <div class="cell">
+            <form method="POST">{% csrf_token %}
+                <div class="grid-x grid-margin-x">
+                <div class="large-6 cell">
+                    <label>Nombre:
+                        {{form.first_name}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Apellidos:
+                        {{form.last_name}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Trabajo:
+                        {{form.job}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Area:
+                        {{form.departamento}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Habilidades Extra:
+                        {{form.habilidades}}
+                    </label>
+                </div>
+                </div>
+                <button  type="submit" class="success button">Guardar</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
+
+
